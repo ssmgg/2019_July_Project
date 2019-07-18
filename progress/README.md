@@ -27,11 +27,11 @@ annForm.py
 
 detection X
 
-![1.1232_4000](./image/1.1232_4000.PNG)
+![11232_4000](./image/11232_4000.PNG)
 
 ---
 ### 20190718
-#### learning rate 변경, 7000번 학습
+#### learning rate 변경, 학습
 
 1. cfg 변경
 
@@ -39,9 +39,13 @@ detection X
 18: learning_rate=0.001
 ```
 
+
 2. 7000번까지 학습
 
-![20190718](./image/20190718.PNG)
+- left detection이 잘 안됨
+
+![20190718](./image/20190718_7000.PNG)
+![7000번 학습시킨 결과](./video/7000.mp4)
 
 - memory error
 ```
@@ -49,3 +53,11 @@ detection X
 width=416(<-608)
 height=416(-<608)
 ```
+
+
+3. 8000번까지 학습
+
+- left detection 잘됨
+
+![20190718_8000](./image/20190718_8000.PNG)
+![8000번 학습시킨 결과](./video/8000.mp4)

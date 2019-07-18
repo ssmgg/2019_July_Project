@@ -53,22 +53,22 @@ backup = backup
 4. cmd code
 ```cmd
 # train first
->darknet.exe detector train data/hand.data cfg/mj-yolov3-tiny.cfg darknet53.conv.74
+darknet.exe detector train data/hand.data cfg/mj-yolov3-tiny.cfg darknet53.conv.74
   or
->darknet.exe detector train data/hand.data cfg/mj-yolov3-tiny.cfg darknet53.conv.74 -map
+darknet.exe detector train data/hand.data cfg/mj-yolov3-tiny.cfg darknet53.conv.74 -map
 
 # train
->darknet.exe detector train data/hand.data cfg/yolov3-mj.cfg backup/yolov3-mj_7000.weights
+darknet.exe detector train data/hand.data cfg/yolov3-mj.cfg backup/yolov3-mj_7000.weights
   or
->darknet.exe detector train data/hand.data cfg/yolov3-mj.cfg backup/yolov3-mj_7000.weights -map
+darknet.exe detector train data/hand.data cfg/yolov3-mj.cfg backup/yolov3-mj_7000.weights -map
 
 # test
 # image
->darknet.exe detector test data/hand.data cfg/yolov3-mj.cfg backup/yolov3-mj_7000.weights C:\Users\rhdwb\Desktop\darknet\build\darknet\x64\data\hand\CARDS_COURTYARD_B_T_frame_0036.jpg
+darknet.exe detector test data/hand.data cfg/yolov3-mj.cfg backup/yolov3-mj_7000.weights C:\Users\rhdwb\Desktop\darknet\build\darknet\x64\data\hand\CARDS_COURTYARD_B_T_frame_0036.jpg
 # webcam
->darknet.exe detector demo data/hand.data cfg/yolov3-mj.cfg backup/yolov3-mj_7000.weights
+darknet.exe detector demo data/hand.data cfg/yolov3-mj.cfg backup/yolov3-mj_7000.weights
 
 # darknet dir
->cd C:\Users\rhdwb\Desktop\darknet\build\darknet\x64
+cd C:\Users\rhdwb\Desktop\darknet\build\darknet\x64
 C:\Users\rhdwb\Desktop\darknet\build\darknet\x64\data\hand\CARDS_COURTYARD_B_T_frame_0036.jpg
 ```
