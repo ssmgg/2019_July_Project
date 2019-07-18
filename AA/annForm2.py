@@ -42,7 +42,7 @@ while True:
         row__ = temp[0].split('_')
         w = row_[5]
         w_ = row__[5]
-        print(w, w_)
+        # print(w, w_)
         i = i+1
         if w != w_:
             print("diffff")

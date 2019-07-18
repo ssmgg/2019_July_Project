@@ -1,3 +1,0 @@
-filename	width	height	class	xmin	ymin	xmax	ymax
-CARDS_COURTYARD_B_T_frame_0113	1280	720	yourleft	653	423	824	526
-CARDS_COURTYARD_B_T_frame_0113	1280	720	yourright	526	395	645	511
