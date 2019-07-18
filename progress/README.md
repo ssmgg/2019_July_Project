@@ -37,6 +37,7 @@ yolo3-mj.cfg
 
 detection X
 ![1.1232_4000](./image/1.1232_4000.PNG)
+
 ---
 ### 20190718
 #### learning rate 변경, 7000번 학습
