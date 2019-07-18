@@ -23,8 +23,7 @@ annForm.py
 4: subdivisions=64
 6: batch=1
 7: subdivisions=64
-**17: flip=0**
-# If you train the model to distinguish Left and Right objects as separate classes (left/right hand, left/right-turn on road signs, ...) then for disabling flip data augmentation - add flip=0
+*17: flip=0*
 18: learning_rate=0.01
 20: max_batches=4000(class * 2000)
 127: filters=21
@@ -32,6 +31,7 @@ annForm.py
 171: filters=21
 177: classes=2
 ```
+- If you train the model to distinguish Left and Right objects as separate classes (left/right hand, left/right-turn on road signs, ...) then for disabling flip data augmentation - add flip=0
 
 
 2. 4000번까지 학습
@@ -74,6 +74,9 @@ detection X
 18: learning_rate=0.001
 ```
 
+2. 7000번까지 학습
+
+![20190718](./image/20190718.PNG)
 
 - memory error
 ```
