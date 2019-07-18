@@ -44,7 +44,8 @@ detection X
 
 - left detection이 잘 안됨
 
-![20190718](./image/20190718.PNG)
+![20190718](./image/20190718_7000.PNG)
+![7000번 학습시킨 결과](./video/7000.mp4)
 
 - memory error
 ```
@@ -58,4 +59,5 @@ height=416(-<608)
 
 - left detection 잘됨
 
-![8000](./video/8000.mp4)
+![20190718_8000](./image/20190718_8000.PNG)
+![8000번 학습시킨 결과](./video/8000.mp4)
