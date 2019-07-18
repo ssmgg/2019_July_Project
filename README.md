@@ -66,7 +66,7 @@ backup = backup
 # image
 >darknet.exe detector test data/hand.data cfg/yolov3-mj.cfg backup/yolov3-mj_7000.weights C:\Users\rhdwb\Desktop\darknet\build\darknet\x64\data\hand\CARDS_COURTYARD_B_T_frame_0036.jpg
 # webcam
->darknet.exe detector demo data/hand.data cfg/mj-yolov3-tiny.cfg backup/mj-yolov3-tiny_last.weights
+>darknet.exe detector demo data/hand.data cfg/yolov3-mj.cfg backup/yolov3-mj_7000.weights
 
 # darknet dir
 >cd C:\Users\rhdwb\Desktop\darknet\build\darknet\x64
