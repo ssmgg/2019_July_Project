@@ -1,0 +1,4 @@
+filename	width	height	class	xmin	ymin	xmax	ymax
+CARDS_COURTYARD_B_T_frame_0099	1280	720	myright	790	619	961	718
+CARDS_COURTYARD_B_T_frame_0099	1280	720	yourleft	730	406	911	520
+CARDS_COURTYARD_B_T_frame_0099	1280	720	yourright	591	375	717	495

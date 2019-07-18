@@ -1,0 +1,24 @@
+darknet.exe detector train data/hand.data cfg/mj-yolov3-tiny.cfg darknet53.conv.74 -map
+darknet.exe detector test data/hand.data cfg/yolov3-mj.cfg backup/yolov3-mj_7000.weights C:\Users\rhdwb\Desktop\darknet\build\darknet\x64\data\hand\CARDS_COURTYARD_B_T_frame_0036.jpg
+darknet.exe detector demo data/hand.data cfg/mj-yolov3-tiny.cfg backup/mj-yolov3-tiny_last.weights 
+darknet.exe detector train data/hand.data cfg/mj2.cfg
+
+darknet.exe detector train data/hand.data cfg/yolov3-mj.cfg backup/yolov3-mj_4000.weights -map
+darknet.exe detector demo data/hand.data cfg/mj-yolov3-tiny.cfg backup/yolov3-mj_7000.weights
+
+darknet.exe detector train data/hand.data cfg/yolov3-mj.cfg darknet53.conv.74 -map
+darknet.exe detector train data/hand.data cfg/yolov3-mj.cfg backup/mj-yolov3-tiny_1000.weights -map
+
+
+
+max_batches = 2000*classes
+
+C:\Users\rhdwb\Desktop\darknet\build\darknet\x64
+C:\Users\rhdwb\Desktop\darknet\build\darknet\x64\data\hand\CARDS_COURTYARD_B_T_frame_0036.jpg
+
+darknet detect cfg/yolov3-mj.cfg backup/yolov3-mj_best.weights data/hand/CARDS_COURTYARD_B_T_frame_0036.jpg
+
+
+If you train the model to distinguish Left and Right objects as separate classes (left/right hand, left/right-turn on road signs, ...) then for disabling flip data augmentation - add flip=0 here: https://github.com/AlexeyAB/darknet/blob/3d2d0a7c98dbc8923d9ff705b81ff4f7940ea6ff/cfg/yolov3.cfg#L17
+
+to speedup training (with decreasing detection accuracy) do Fine-Tuning instead of Transfer-Learning, set param stopbackward=1 here: https://github.com/AlexeyAB/darknet/blob/6d44529cf93211c319813c90e0c1adb34426abe5/cfg/yolov3.cfg#L548 then do this command: ./darknet partial cfg/yolov3.cfg yolov3.weights yolov3.conv.81 81 will be created file yolov3.conv.81, then train by using weights file yolov3.conv.81 instead of darknet53.conv.74
