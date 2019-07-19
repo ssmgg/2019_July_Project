@@ -18,6 +18,7 @@ http://vision.soic.indiana.edu/projects/egohands/
 
 1. cfg
 ```
+# yolov3-mj.cfg
 3: batch=1
 4: subdivisions=64
 6: batch=1
@@ -30,10 +31,24 @@ http://vision.soic.indiana.edu/projects/egohands/
 171: filters=21
 177: classes=2
 ```
+
+```
+# yolov2-mj.cfg
+3: batch=1
+4: subdivisions=64
+6: batch=1
+7: subdivisions=64
+*17: flip=0*
+18: learning_rate=0.01
+20: max_batches=4000
+119: filters=35
+125: classes=2
+```
+
 - If you train the model to distinguish Left and Right objects as separate classes (left/right hand, left/right-turn on road signs, ...) then for disabling flip data augmentation - add flip=0
 
 
-2. hand.name
+2. hand.names
 ```
 left #class 0
 right #class 1
