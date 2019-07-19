@@ -9,3 +9,6 @@ darknet.exe detector train data/hand.data cfg/yolov3-mj.cfg backup/mj-yolov3-tin
 
 C:\Users\rhdwb\Desktop\darknet\build\darknet\x64
 C:\Users\rhdwb\Desktop\darknet\build\darknet\x64\data\hand\CARDS_COURTYARD_B_T_frame_0036.jpg
+
+
+darknet.exe detector train data/hand.data cfg/yolov2-mj.cfg darknet19_448.conv.23
