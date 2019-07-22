@@ -85,3 +85,10 @@ height=416(-<608)
 
 
 3. Yolo v2로 학습 시작
+
+
+---
+## 20190722
+### 아니 왜 어플 실행 안되는거ㅡㅡ 개짜증
+### darkflow로 다시 합니다....
+### txt -> xml 변환 코드 (https://murra.tistory.com/62?category=693207)
