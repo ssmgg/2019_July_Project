@@ -3,16 +3,18 @@ from PIL import Image
 import csv
 import os
 
-IMG_PATH = "D:/__Project__/darkflow-master/data/train_traffic_light"
+IMG_PATH = "A:/gitclone/darkflow/data/dataset"
+#IMG_PATH = "A:/2019_July_Project/AA/prac/img"
 fw = os.listdir(IMG_PATH)
 # path of save xml file
-save_path = 'D:/__Project__/darkflow-master/data/annotations/'
-
+#save_path = 'A:/2019_July_Project/AA/prac/save/'
+save_path = 'A:/gitclone/darkflow/data/annotations/'
 # txt_folder is txt file root that using darknet rectbox
-txt_folder = 'D:/__Project__/darkflow-master/data/train_traffic_light_TXT'
+txt_folder = 'A:/2019_July_Project/AA/prac'
 
 # edit ypur label set
-labels = ['traffic light']
+labels = ['left', 'right']
+
 
 def csvread(fn):
     with open(fn, 'r') as csvfile:
@@ -25,10 +27,12 @@ def csvread(fn):
 
 
 def convert_label(txt_file):
-    if((txt_file[0]) == str(0)):
-        label = 'traffic light'
-
+    if((txt_file) == str(0)):
+        label = labels[0]
     return label
+    # elif((txt_file) == str(1)):
+    #     label = labels[1]
+    #     return label
 
 # core code = convert the yolo txt file to the x_min,x_max...
 
@@ -109,7 +113,6 @@ for line in fw:
     root.append(segmented)
 
     for ii in range(len(txt_file)):
-
         label = convert_label(txt_file[ii][0])
         x_min_rect, x_max_rect, y_min_rect, y_max_rect = extract_coor(
             txt_file[ii], img_width, img_height)
