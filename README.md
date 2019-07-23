@@ -60,7 +60,7 @@ right #class 1
 classes = 2
 train = data/train.txt
 valid = data/test.txt
-names = data/hand.name
+names = data/hand.names
 backup = backup
 ```
 
