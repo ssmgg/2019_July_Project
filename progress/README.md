@@ -92,3 +92,16 @@ height=416(-<608)
 ### 아니 왜 어플 실행 안되는거ㅡㅡ 개짜증
 ### darkflow로 다시 합니다....
 ### txt -> xml 변환 코드 (https://murra.tistory.com/62?category=693207)
+
+
+---
+## 20190725
+### darkflow 학습시 텐서플로 버전 낮추면 에러
+### 어플 빌드 성공 but 실행 X
+
+![20190725](./image/androidBuildFail)
+
+```android studio
+Caused by: java.io.IOException: Not a valid TensorFlow Graph serialization: NodeDef mentions attr 'explicit_paddings' not in Op<name=Conv2D; signature=input:T, filter:T -> output:T; attr=T:type,allowed=[DT_HALF, DT_BFLOAT16, DT_FLOAT, DT_DOUBLE]; attr=strides:list(int); attr=use_cudnn_on_gpu:bool,default=true; attr=padding:string,allowed=["SAME", "VALID"]; attr=data_format:string,default="NHWC",allowed=["NHWC", "NCHW"]; attr=dilations:list(int),default=[1, 1, 1, 1]>; NodeDef: {{node 0-convolutional}}. (Check whether your GraphDef-interpreting binary is up to date with your GraphDef-generating binary.).
+```
+
