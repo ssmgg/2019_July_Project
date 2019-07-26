@@ -99,10 +99,25 @@ height=416(-<608)
 ### darkflow 학습시 텐서플로 버전 낮추면 에러
 ### 어플 빌드 성공 but 실행 X
 
-![20190725](./image/androidBuildFail)
+![20190725](./image/androidBuildFail.png)
 
 ```android studio
 Caused by: java.io.IOException: Not a valid TensorFlow Graph serialization: NodeDef mentions attr 'explicit_paddings' not in Op<name=Conv2D; signature=input:T, filter:T -> output:T; attr=T:type,allowed=[DT_HALF, DT_BFLOAT16, DT_FLOAT, DT_DOUBLE]; attr=strides:list(int); attr=use_cudnn_on_gpu:bool,default=true; attr=padding:string,allowed=["SAME", "VALID"]; attr=data_format:string,default="NHWC",allowed=["NHWC", "NCHW"]; attr=dilations:list(int),default=[1, 1, 1, 1]>; NodeDef: {{node 0-convolutional}}. (Check whether your GraphDef-interpreting binary is up to date with your GraphDef-generating binary.).
 ```
 - 실패 이유?
 - 내 .pb 파일에는 explicit_paddings 이 있다.. 다른 건 없음 --> 읽는 함수에 문제? or pb 변환과정에 문제(tensorflow 버전)
+
+
+
+---
+## 20190726
+### 빌드 성공, detection 확률 매우 낮음
+
+1. 빌드 성공
+  : tensorflow==1.13.1 사용
+  (protobuf==3.8 사용)
+ 
+2. 학습 시작 12시간 경과
+  : loss 4대, 꾸준히 내려가는 중(step12000)
+  ![lossgraph-12000](./image/tensorgraph-12000.png)
+  ![lossgraph-12000](./image/tensorgraph-12000-smooth.png)
