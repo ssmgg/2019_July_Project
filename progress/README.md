@@ -120,4 +120,4 @@ Caused by: java.io.IOException: Not a valid TensorFlow Graph serialization: Node
 2. 학습 시작 12시간 경과
   : loss 4대, 꾸준히 내려가는 중(step12000)
   ![lossgraph-12000](./image/tensorgraph-12000.PNG)
-  ![lossgraph-12000](./image/tensorgraph-12000-smooth.PNG)
+  ![lossgraph-12000](./image/tensorgraph-1200-smooth.PNG)
