@@ -35,7 +35,7 @@
 
 3. 학습 시작 12시간 경과
   : loss 4대, 꾸준히 내려가는 중(step12000)
-  ![lossgraph-12000](./image/tensorgraph-12000.PNG){: width="100%" height="100%"}
+  ![lossgraph-12000](./image/tensorgraph-12000.PNG)<img width="100%" height="100%"></img>
   ![lossgraph-12000](./image/tensorgraph-1200-smooth.PNG){: width="100%" height="100%"}
 
 
