@@ -13,8 +13,8 @@
 
 
 ---
-## 20190726
-### 안드로이드 오류 해결, but detection 정확도 매우 낮음
+### 20190726
+#### 안드로이드 오류 해결, but detection 정확도 매우 낮음
 
 1. 안드로이드 오류 해결
     - 원인: 지난 주 사용했던 tensorflow==1.14.0에 포함된 패키지인 protobuf==3.9를 사용해 .pb파일 변환 시
@@ -41,9 +41,8 @@
 
 
 ---
-## 20190725
-### darkflow 학습시 텐서플로 버전 낮추면 에러
-### 어플 빌드 성공 but 실행 X
+### 20190725
+#### darkflow 학습시 텐서플로 버전 낮추면 에러, 어플 빌드 성공 but 실행 X
 
 ![20190725](./image/androidBuildFail.PNG)
 
@@ -56,8 +55,8 @@ Caused by: java.io.IOException: Not a valid TensorFlow Graph serialization: Node
 
 
 ---
-## 20190722
-### 어플 실행 안됨, darkflow로 재학습
+### 20190722
+#### 어플 실행 안됨, darkflow로 재학습
 
 
 1. darkflow로 재학습
@@ -67,8 +66,8 @@ Caused by: java.io.IOException: Not a valid TensorFlow Graph serialization: Node
 
 
 ---
-## 20190719
-### 10000번까지 학습 완료, 안드로이드 얹는 작업 실패, Yolo v2 로 학습 재시작
+### 20190719
+#### 10000번까지 학습 완료, 안드로이드 얹는 작업 실패, Yolo v2 로 학습 재시작
 
 
 1. 10000번까지 학습 완료
@@ -83,8 +82,8 @@ Caused by: java.io.IOException: Not a valid TensorFlow Graph serialization: Node
 
 
 ---
-### 20190718
-#### learning rate 변경, 학습
+#### 20190718
+##### learning rate 변경, 학습
 
 1. cfg 변경
 
@@ -123,8 +122,8 @@ height=416(-<608)
 
 
 ---
-### 20190716
-#### cfg 변경, 4000번 학습(detection X)
+#### 20190716
+##### cfg 변경, 4000번 학습(detection X)
 1. cfg 변경
 
   yolo3-mj.cfg
@@ -145,14 +144,14 @@ height=416(-<608)
 
 
 ----
-### 20190712
-#### annotation 작업 마침
+#### 20190712
+##### annotation 작업 마침
 
 hand.name, hand.data, mj-yolov3-tiny.cfg
 
 [annForm2.py](./AA/annForm2.py)
 
 ---
-### 20190619
+#### 20190619
 ![20190619](./image/20190619.PNG)
 ![20190619_ssmgg](./video/20190619_ssmgg.mp4)
