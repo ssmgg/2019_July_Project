@@ -35,8 +35,8 @@
 
 3. 학습 시작 12시간 경과
   : loss 4대, 꾸준히 내려가는 중(step12000)
-  ![lossgraph-12000](./image/tensorgraph-12000.PNG)<img width="100%" height="100%"></img>
-  ![lossgraph-12000](./image/tensorgraph-1200-smooth.PNG){: width="100%" height="100%"}
+  ![lossgraph-12000](./image/tensorgraph-12000.PNG)<img width="100%" height="100%">
+  ![lossgraph-12000](./image/tensorgraph-1200-smooth.PNG)<img width="100%" height="100%">
 
 
 
@@ -44,7 +44,7 @@
 ### 20190725
 #### darkflow 학습시 텐서플로 버전 낮추면 에러, 어플 빌드 성공 but 실행 X
 
-![20190725](./image/androidBuildFail.PNG){: width="100%" height="100%"}
+![20190725](./image/androidBuildFail.PNG)<img width="100%" height="100%">
 
 ```android studio
 Caused by: java.io.IOException: Not a valid TensorFlow Graph serialization: NodeDef mentions attr 'explicit_paddings' not in Op<name=Conv2D; signature=input:T, filter:T -> output:T; attr=T:type,allowed=[DT_HALF, DT_BFLOAT16, DT_FLOAT, DT_DOUBLE]; attr=strides:list(int); attr=use_cudnn_on_gpu:bool,default=true; attr=padding:string,allowed=["SAME", "VALID"]; attr=data_format:string,default="NHWC",allowed=["NHWC", "NCHW"]; attr=dilations:list(int),default=[1, 1, 1, 1]>; NodeDef: {{node 0-convolutional}}. (Check whether your GraphDef-interpreting binary is up to date with your GraphDef-generating binary.).
@@ -71,7 +71,7 @@ Caused by: java.io.IOException: Not a valid TensorFlow Graph serialization: Node
 
 
 1. 10000번까지 학습 완료
-![1000번 학습 결과](./image/07610_10000.png){: width="50%" height="50%"}
+![10000번 학습 결과](./image/07610_10000.png)<img width="30%" height="30%">
 
 
 2. 안드로이드 얹는 작업 - 실패
@@ -96,7 +96,7 @@ Caused by: java.io.IOException: Not a valid TensorFlow Graph serialization: Node
 
 - left detection이 잘 안됨
 
-![20190718](./image/20190718_7000.PNG){: width="50%" height="50%"}
+![20190718](./image/20190718_7000.PNG)<img width="50%" height="50%">
 
 
 ![7000번 학습시킨 결과 영상](./video/7000.mp4)
@@ -114,7 +114,7 @@ height=416(-<608)
 
 - left detection 잘됨
 
-![20190718_8000](./image/20190718_8000.PNG){: width="50%" height="50%"}
+![20190718_8000](./image/20190718_8000.PNG)<img width="50%" height="50%">
 
 
 ![8000번 학습시킨 결과 영상](./video/8000.mp4)
@@ -139,7 +139,7 @@ height=416(-<608)
   (원인)학습량 부족(thresh=0 설정 -> detection 됨 -> 결론: 학습에서 문제 발생)
 
 
-![11232_4000](./image/11232_4000.png){: width="100%" height="100%"}
+![11232_4000](./image/11232_4000.png)<img width="100%" height="100%">
 
 
 
@@ -153,5 +153,5 @@ hand.name, hand.data, mj-yolov3-tiny.cfg
 
 ---
 #### 20190619
-![20190619](./image/20190619.PNG){: width="100%" height="100%"}
+![20190619](./image/20190619.PNG)<img width="100%" height="100%">
 ![20190619_ssmgg](./video/20190619_ssmgg.mp4)
