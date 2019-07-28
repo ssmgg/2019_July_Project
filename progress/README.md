@@ -60,6 +60,7 @@ Caused by: java.io.IOException: Not a valid TensorFlow Graph serialization: Node
 
 
 1. darkflow로 재학습
+
   [txt -> xml 변환 코드 ](https://murra.tistory.com/62?category=693207)
   학습 과정은 [darkflow github](https://github.com/thtrieu/darkflow)와 [메인 페이지 블로그](https://junyoung-jamong.github.io/deep/learning/2019/01/22/Darkflow%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%B4-YOLO%EB%AA%A8%EB%8D%B8-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%94%94%ED%85%8D%EC%85%98-%EA%B5%AC%ED%98%84-in-windows.html) 참고
 
@@ -70,14 +71,11 @@ Caused by: java.io.IOException: Not a valid TensorFlow Graph serialization: Node
 #### 10000번까지 학습 완료, 안드로이드 얹는 작업 실패, Yolo v2 로 학습 재시작
 
 
-1. 10000번까지 학습 완료
-![10000번 학습 결과](./image/07610_10000.png)<img width="30%" height="30%">
+1. 안드로이드 얹는 작업 - 실패
 
-
-2. 안드로이드 얹는 작업 - 실패
    (추정 원인) 구글링 결과, 해당 tensorflow android example은 yolo v3 지원하지 않음
 
-3. Yolo v2로 학습 시작
+2. Yolo v2로 학습 시작
 
 
 
@@ -139,7 +137,7 @@ height=416(-<608)
   (원인)학습량 부족(thresh=0 설정 -> detection 됨 -> 결론: 학습에서 문제 발생)
 
 
-![11232_4000](./image/11232_4000.png)<img width="100%" height="100%">
+![11232_4000](./image/11232_4000.png)<img width="40%" height="40%">
 
 
 
@@ -154,4 +152,4 @@ hand.name, hand.data, mj-yolov3-tiny.cfg
 ---
 #### 20190619
 ![20190619](./image/20190619.PNG)<img width="100%" height="100%">
-![20190619_ssmgg](./video/20190619_ssmgg.mp4)
+![app running video](./video/20190619_ssmgg.mp4)
