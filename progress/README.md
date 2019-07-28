@@ -1,8 +1,59 @@
-# 진행상황
+# 진행상황(최신 순)
+
+
+
+---
+### 20190728
+#### tiny-yolo-voc.cfg 를 class 두개로 수정해 학습
+
+1. tiny-yolo-voc.cfg 를 class 두개로 수정해 학습
+
+2. 해당 configure에 대해 앱 빌드 성공(학습 중)
+
+
+
+---
+## 20190726
+### 빌드 성공, detection 확률 매우 낮음
+
+1. 빌드 성공
+  : tensorflow==1.13.1 사용
+  (protobuf==3.8 사용 - protobuf google 홈페이지)
+ 
+
+2. detection 확률 매우 낮음
+  : (추정 원인 1) class 수가 20개인 'tiny-yolo-voc.cfg'를 변환없이 사용함으로써, 정답(데이터셋)은 'left', 'right'만 지정해 다른 class에 대해서는 학습이 이뤄지지 않음
+    (추정 원인 2) 해당 weight가 앱에 제대로 로드되지않았거나, 학습이 제대로 이뤄지지않음
+
+3. 학습 시작 12시간 경과
+  : loss 4대, 꾸준히 내려가는 중(step12000)
+  ![lossgraph-12000](./image/tensorgraph-12000.PNG)
+  ![lossgraph-12000](./image/tensorgraph-1200-smooth.PNG)
+
+
+
+---
+## 20190725
+### darkflow 학습시 텐서플로 버전 낮추면 에러
+### 어플 빌드 성공 but 실행 X
+
+![20190725](./image/androidBuildFail.PNG)
+
+```android studio
+Caused by: java.io.IOException: Not a valid TensorFlow Graph serialization: NodeDef mentions attr 'explicit_paddings' not in Op<name=Conv2D; signature=input:T, filter:T -> output:T; attr=T:type,allowed=[DT_HALF, DT_BFLOAT16, DT_FLOAT, DT_DOUBLE]; attr=strides:list(int); attr=use_cudnn_on_gpu:bool,default=true; attr=padding:string,allowed=["SAME", "VALID"]; attr=data_format:string,default="NHWC",allowed=["NHWC", "NCHW"]; attr=dilations:list(int),default=[1, 1, 1, 1]>; NodeDef: {{node 0-convolutional}}. (Check whether your GraphDef-interpreting binary is up to date with your GraphDef-generating binary.).
+```
+- 실패 이유?
+- 내 .pb 파일에는 explicit_paddings 이 있다.. 다른 건 없음 --> 읽는 함수에 문제? or pb 변환과정에 문제(tensorflow 버전)
+
+
+
+
+
 ---
 ### 20190619
 ![20190619](./image/20190619.PNG)
 ![20190619_ssmgg](./video/20190619_ssmgg.mp4)
+
 
 ----
 ### 20190712
@@ -94,30 +145,3 @@ height=416(-<608)
 ### txt -> xml 변환 코드 (https://murra.tistory.com/62?category=693207)
 
 
----
-## 20190725
-### darkflow 학습시 텐서플로 버전 낮추면 에러
-### 어플 빌드 성공 but 실행 X
-
-![20190725](./image/androidBuildFail.PNG)
-
-```android studio
-Caused by: java.io.IOException: Not a valid TensorFlow Graph serialization: NodeDef mentions attr 'explicit_paddings' not in Op<name=Conv2D; signature=input:T, filter:T -> output:T; attr=T:type,allowed=[DT_HALF, DT_BFLOAT16, DT_FLOAT, DT_DOUBLE]; attr=strides:list(int); attr=use_cudnn_on_gpu:bool,default=true; attr=padding:string,allowed=["SAME", "VALID"]; attr=data_format:string,default="NHWC",allowed=["NHWC", "NCHW"]; attr=dilations:list(int),default=[1, 1, 1, 1]>; NodeDef: {{node 0-convolutional}}. (Check whether your GraphDef-interpreting binary is up to date with your GraphDef-generating binary.).
-```
-- 실패 이유?
-- 내 .pb 파일에는 explicit_paddings 이 있다.. 다른 건 없음 --> 읽는 함수에 문제? or pb 변환과정에 문제(tensorflow 버전)
-
-
-
----
-## 20190726
-### 빌드 성공, detection 확률 매우 낮음
-
-1. 빌드 성공
-  : tensorflow==1.13.1 사용
-  (protobuf==3.8 사용)
- 
-2. 학습 시작 12시간 경과
-  : loss 4대, 꾸준히 내려가는 중(step12000)
-  ![lossgraph-12000](./image/tensorgraph-12000.PNG)
-  ![lossgraph-12000](./image/tensorgraph-1200-smooth.PNG)
