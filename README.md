@@ -45,6 +45,10 @@ http://vision.soic.indiana.edu/projects/egohands/
 125: classes=2
 ```
 
+```
+# tiny-yolo-voc-hand.cfg
+
+
 - If you train the model to distinguish Left and Right objects as separate classes (left/right hand, left/right-turn on road signs, ...) then for disabling flip data augmentation - add flip=0
 
 
