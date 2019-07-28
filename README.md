@@ -1,5 +1,7 @@
-﻿7월 프로젝트
+﻿# 7월 프로젝트
  left hand, right hand real time detection on Android Using darkflow(used darknet also)
+ ---
+ Open the dir 'progress' if want to know about my project more specific.
 ----
 
 # Yolo+Android (2개월_s)
