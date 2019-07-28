@@ -6,24 +6,32 @@
 ### 20190728
 #### tiny-yolo-voc.cfg 를 class 두개로 수정해 학습
 
-1. tiny-yolo-voc.cfg 를 class 두개로 수정해 학습
+1. tiny-yolo-voc.cfg 를 class 두개로 수정해 학습 중(left, right)
 
-2. 해당 configure에 대해 앱 빌드 성공(학습 중)
+2. 해당 configure에 대해 앱 빌드 성공(학습 후에 다시 빌드 예정 - loss가 아직 높아 정확한 detection 불가능)
 
 
 
 ---
 ## 20190726
-### 빌드 성공, detection 확률 매우 낮음
+### 안드로이드 오류 해결, but detection 정확도 매우 낮음
 
-1. 빌드 성공
-  : tensorflow==1.13.1 사용
-  (protobuf==3.8 사용 - protobuf google 홈페이지)
- 
+1. 안드로이드 오류 해결
+    - 원인: 지난 주 사용했던 tensorflow==1.14.0에 포함된 패키지인 protobuf==3.9를 사용해 .pb파일 변환 시
+    ```cmd
+    python flow --model cfg/yolo-mj.cfg --load -1 --loadpb --verbalise
+    ```
+    .pb 파일을 안드로이드 스튜디오에서 열었을 때 'explicit_paddings'이라는 요구 조건과 다른 구성이 들어있었음
+    이에 따라 어플 실행 시 해당 파일을 로드하지 못하는 오류가 생겼음 _(20190725 참고)_
+    
+    - 해결 방법: tensorflow==1.13.1 사용
+      (protobuf==3.8 사용 - protobuf google 홈페이지 참고 https://developers.google.com/protocol-buffers/)
+
 
 2. detection 확률 매우 낮음
-  : (추정 원인 1) class 수가 20개인 'tiny-yolo-voc.cfg'를 변환없이 사용함으로써, 정답(데이터셋)은 'left', 'right'만 지정해 다른 class에 대해서는 학습이 이뤄지지 않음
+  : (추정 원인 1) class 수가 20개인 'tiny-yolo-voc.cfg'를 변환없이 사용함으로써, 정답(데이터셋)은 'left', 'right'만 지정해 다른 class에 대해서는 학습이 이뤄지지 않음 _가능성 제일 높음_
     (추정 원인 2) 해당 weight가 앱에 제대로 로드되지않았거나, 학습이 제대로 이뤄지지않음
+
 
 3. 학습 시작 12시간 경과
   : loss 4대, 꾸준히 내려가는 중(step12000)
@@ -47,41 +55,32 @@ Caused by: java.io.IOException: Not a valid TensorFlow Graph serialization: Node
 
 
 
+---
+## 20190722
+### 어플 실행 안됨, darkflow로 재학습
+
+
+1. darkflow로 재학습
+  [txt -> xml 변환 코드 ](https://murra.tistory.com/62?category=693207)
+  학습 과정은 [darkflow github](https://github.com/thtrieu/darkflow)와 [메인 페이지 블로그](https://junyoung-jamong.github.io/deep/learning/2019/01/22/Darkflow%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%B4-YOLO%EB%AA%A8%EB%8D%B8-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%94%94%ED%85%8D%EC%85%98-%EA%B5%AC%ED%98%84-in-windows.html) 참고
+
 
 
 ---
-### 20190619
-![20190619](./image/20190619.PNG)
-![20190619_ssmgg](./video/20190619_ssmgg.mp4)
+## 20190719
+### 10000번까지 학습 완료, 안드로이드 얹는 작업 실패, Yolo v2 로 학습 재시작
 
 
-----
-### 20190712
-#### annotation 작업 마침
-
-hand.name, hand.data, mj-yolov3-tiny.cfg
-
-annForm.py
-
----
-### 20190716
-#### cfg 변경, 4000번 학습(detection X)
-1. cfg 변경
-
-  yolo3-mj.cfg
+1. 10000번까지 학습 완료
+![1000번 학습 결과](./image/07610_10000.PNG)
 
 
-2. 4000번까지 학습
+2. 안드로이드 얹는 작업 - 실패
+   (추정 원인) 구글링 결과, 해당 tensorflow android example은 yolo v3 지원하지 않음
+
+3. Yolo v2로 학습 시작
 
 
-
-
-- detection: 실패
-
-  원인: 학습량 부족(thresh=0 설정 -> detection 됨 -> 결론: 학습에서 문제 발생)
-
-
-![11232_4000](./image/11232_4000.PNG)
 
 ---
 ### 20190718
@@ -122,26 +121,38 @@ height=416(-<608)
 ![8000번 학습시킨 결과 영상](./video/8000.mp4)
 
 
----
-## 20190719
-### 10000번까지 학습 완료, 안드로이드 얹는 작업 실패, Yolo v2 로 학습 재시작
-
-
-1. 10000번까지 학습 완료
-
-![1000번 학습 결과](./image/07610_10000.PNG)
-
-
-2. 안드로이드 얹는 작업 - 실패
-
-
-3. Yolo v2로 학습 시작
-
 
 ---
-## 20190722
-### 아니 왜 어플 실행 안되는거ㅡㅡ 개짜증
-### darkflow로 다시 합니다....
-### txt -> xml 변환 코드 (https://murra.tistory.com/62?category=693207)
+### 20190716
+#### cfg 변경, 4000번 학습(detection X)
+1. cfg 변경
+
+  yolo3-mj.cfg
 
 
+2. 4000번까지 학습
+
+
+
+
+- detection: 실패
+
+  (원인)학습량 부족(thresh=0 설정 -> detection 됨 -> 결론: 학습에서 문제 발생)
+
+
+![11232_4000](./image/11232_4000.PNG)
+
+
+
+----
+### 20190712
+#### annotation 작업 마침
+
+hand.name, hand.data, mj-yolov3-tiny.cfg
+
+[annForm2.py](./AA/annForm2.py)
+
+---
+### 20190619
+![20190619](./image/20190619.PNG)
+![20190619_ssmgg](./video/20190619_ssmgg.mp4)
