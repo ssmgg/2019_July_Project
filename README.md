@@ -1,4 +1,5 @@
 ﻿7월 프로젝트
+ left hand, right hand real time detection on Android Using darkflow(used darknet also)
 ----
 
 # Yolo+Android (2개월_s)
@@ -69,17 +70,13 @@ backup = backup
 ```
 
 
-4. cmd code
+4. cmd code(darknet)
 ```cmd
 # train first
-darknet.exe detector train data/hand.data cfg/mj-yolov3-tiny.cfg darknet53.conv.74
-  or
-darknet.exe detector train data/hand.data cfg/mj-yolov3-tiny.cfg darknet53.conv.74 -map
+darknet.exe detector train data/hand.data cfg/mj-yolov3-tiny.cfg
 
 # train
 darknet.exe detector train data/hand.data cfg/yolov3-mj.cfg backup/yolov3-mj_7000.weights
-  or
-darknet.exe detector train data/hand.data cfg/yolov3-mj.cfg backup/yolov3-mj_7000.weights -map
 
 # test
 # image
