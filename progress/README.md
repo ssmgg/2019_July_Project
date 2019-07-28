@@ -7,6 +7,17 @@
 #### tiny-yolo-voc.cfg 를 class 두개로 수정해 학습
 
 1. tiny-yolo-voc.cfg 를 class 두개로 수정해 학습 중(left, right)
+```
+# computer1
+lr: 1e-3
+batch: 8
+epoch: 50(goal)
+
+#computer2
+lr: 1e-2
+batch: 16
+epoch: 100(goal)
+```
 
 2. 해당 configure에 대해 앱 빌드 성공(학습 후에 다시 빌드 예정 - loss가 아직 높아 정확한 detection 불가능)
 
@@ -14,7 +25,7 @@
 
 ---
 ### 20190726
-#### 안드로이드 오류 해결, but detection 정확도 매우 낮음
+#### 안드로이드 오류 해결, but detection 정확도 매우 낮음, tensorflow 버전 맞춰서 재학습
 
 1. 안드로이드 오류 해결
     - 원인: 지난 주 사용했던 tensorflow==1.14.0에 포함된 패키지인 protobuf==3.9를 사용해 .pb파일 변환 시
@@ -34,9 +45,18 @@
 
 
 3. 학습 시작 12시간 경과
-  : loss 4대, 꾸준히 내려가는 중(step12000)
-  ![lossgraph-12000](./image/tensorgraph-12000.PNG)<img width="100%" height="100%">
+```
+lr: 1e-04
+batch: 32
+```
+  : loss 4 (step12000)
   ![lossgraph-12000](./image/tensorgraph-1200-smooth.PNG)<img width="100%" height="100%">
+
+
+4. lr 수정
+```
+lr: 5e-06 
+```
 
 
 
