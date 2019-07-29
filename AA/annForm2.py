@@ -6,9 +6,9 @@ def classNum(hand):
 
 
 #f = open("C:/Users/rhdwb/Desktop/darknet/build/darknet/x64/data/hand/train_labels.txt", 'r')
-f = open("prac.txt")
+#f = open("prac.txt")
 #f= open("test_labels.txt")
-#f = open("train_labels.txt")
+f = open("train_labels.txt")
 
 lines = f.readlines()
 line_length = len(lines)
@@ -28,8 +28,8 @@ while True:
         xmax = float(row[6])
         ymax = float(row[7])
 
-        x = str(round(((xmax + xmin) / 2.0 - 1)/float(row[1]),4))
-        y = str(round(((ymax + ymin) / 2.0 - 1)/float(row[2]),4))
+        x = str(round(((xmax + xmin) / 2.0)/float(row[1]),4))
+        y = str(round(((ymax + ymin) / 2.0)/float(row[2]),4))
         width = str(round((xmax - xmin)/float(row[1]),4))
         height = str(round((ymax - ymin)/float(row[2]),4))
 
