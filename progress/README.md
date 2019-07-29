@@ -36,12 +36,19 @@ epoch: 100(goal)
     이에 따라 어플 실행 시 해당 파일을 로드하지 못하는 오류가 생겼음 _(20190725 참고)_
     
     - 해결 방법: tensorflow==1.13.1 사용
-      (protobuf==3.8 사용 - protobuf google 홈페이지 참고 https://developers.google.com/protocol-buffers/)
+      (protobuf==3.8 사용 - [protobuf google 홈페이지 참고](https://developers.google.com/protocol-buffers/))
 
 
 2. detection 확률 매우 낮음
   : (추정 원인 1) class 수가 20개인 'tiny-yolo-voc.cfg'를 변환없이 사용함으로써, 정답(데이터셋)은 'left', 'right'만 지정해 다른 class에 대해서는 학습이 이뤄지지 않음 _가능성 제일 높음_
     (추정 원인 2) 해당 weight가 앱에 제대로 로드되지않았거나, 학습이 제대로 이뤄지지않음
+    
+    [detection 영상1](./progress/video/20190726_1.mp4)
+    [detection 영상2](./progress/video/20190726_2.mp4)
+    ```
+    loss: 4.xx
+    threshold: 0.01
+    ```
 
 
 3. 학습 시작 12시간 경과
