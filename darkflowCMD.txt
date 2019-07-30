@@ -1,4 +1,4 @@
-python flow --model cfg/yolo-mj.cfg --labels labels.txt --trainer adam --dataset data/dataset/ --annotation data/annotations/ --train --summary ./logs --batch 1 --epoch 3 --save 50 --keep 5 --lr 1e-04 --gpu 1.0 --load 24680
+python flow --model cfg/tiny-yolo-voc-hand.cfg --labels labels.txt --dataset data/dataset/ --annotation data/annotations/ --train --summary ./logs --batch 8 --epoch 50 --save 50 --keep 5 --lr 1e-04 --gpu 1.0
 
 python flow --imgdir ./data/test/ --model cfg/yolo-mj.cfg --load -1 --gpu 1.0
 python flow --imgdir data/test --model cfg/yolo-mj.cfg --load -1 --batch 1 --threshold 0.5
@@ -7,8 +7,10 @@ python flow --model cfg/yolo-mj.cfg --load -1 --demo camera --gpu 1.0 --threshol
 
 cd gitclone\darkflow
 
-python flow --model cfg/yolov2-mj.cfg --load bin/yolov2-mj.weights --savepb --verbalise
+python flow --model cfg/tiny-yolo-voc-hand.cfg --load -1 --savepb --verbalise
 
 tensorboard --logdir logstrain/
 
 python flow --pbLoad built_graph/yolo-mj.pb --metaLoad built_graph/yolo-mj.meta --imgdir data/test/
+
+localhost
